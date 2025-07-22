@@ -3,14 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   phonebook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ialashqa <ialashqa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ismailalashqar <ismailalashqar@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 12:16:55 by ialashqa          #+#    #+#             */
-/*   Updated: 2025/07/22 19:03:09 by ialashqa         ###   ########.fr       */
+/*   Updated: 2025/07/22 20:22:35 by ismailalash      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "phonebook.hpp"
+
+PhoneBook::PhoneBook() : index(0), totalContacts(0) {
+    // initialize constructor index and totalContacts to 0
+}
 
 void PhoneBook::searchContact() const
 {
@@ -38,7 +42,7 @@ void PhoneBook::searchContact() const
         }
         break;
     }
-    displayContact(index);
+    displayContact(contactIndex);
 }
 
 void PhoneBook::displayPhoneBook() const
@@ -48,13 +52,13 @@ void PhoneBook::displayPhoneBook() const
     std::cout << "✧──────────✧────────────✧───────────✧──────────✧──────────✧\n";
 
     int i = 0;
-    while(i > totalContacts)
+    while(i < totalContacts)
     {
         std::cout << "|"
                     << std::setw(10) << i << "|"
                     << std::setw(10) << formatField(contact[i].getFirstName()) << "|"
                     << std::setw(10) << formatField(contact[i].getLastName()) << "|"
-                    << std::setw(10) << formatField(contact[i].getNickName()) << "|";
+                    << std::setw(10) << formatField(contact[i].getNickName()) << "|             |\n";
         i++;
     }
     std::cout << "✧──────────✧────────────✧───────────✧──────────✧──────────✧\n";
@@ -71,13 +75,6 @@ void PhoneBook::displayContact(int index) const
     std::cout << "· · ─ ·✶· ─ · ·\n";
 }
 
-std::string PhoneBook::formatField(const std::string& str) const {
-    if (str.length() > 10) {
-        return str.substr(0, 9) + ".";
-    }
-    return str;
-}
-
 void PhoneBook::addContact()
 {
     Contact newContact;
@@ -92,6 +89,10 @@ void PhoneBook::addContact()
         std::cout << "Estoopid, you cant leave the field empty!\n"; 
         return;
     }
+    if (!isValidName(input)) {
+        std::cout << "Invalid First Name! Only letters (a-z, A-Z) are allowed.\n";
+        return;
+    }
     newContact.setFirstName(input);
     
     // Last Name
@@ -99,6 +100,10 @@ void PhoneBook::addContact()
     std::getline(std::cin, input);
     if (input.empty()) {
         std::cout << "Estoopid, you cant leave the field empty!\n";
+        return;
+    }
+    if (!isValidName(input)) {
+        std::cout << "Invalid Last Name! Only letters (a-z, A-Z) are allowed.\n";
         return;
     }
     newContact.setLastName(input);
@@ -110,6 +115,10 @@ void PhoneBook::addContact()
         std::cout << "Estoopid, you cant leave the field empty!\n";
         return;
     }
+    if (!isValidNickname(input)) {
+        std::cout << "Invalid Nickname! Only letters (a-z, A-Z) and numbers (0-9) are allowed.\n";
+        return;
+    }
     newContact.setNickName(input);
 
     // Phone Number
@@ -117,6 +126,10 @@ void PhoneBook::addContact()
     std::getline(std::cin, input);
     if (input.empty()) {
         std::cout << "Estoopid, you cant leave the field empty!\n";
+        return;
+    }
+    if (!isValidPhoneNumber(input)) {
+        std::cout << "Invalid Phone Number! Only digits (0-9) are allowed.\n";
         return;
     }
     newContact.setPhoneNumber(input);

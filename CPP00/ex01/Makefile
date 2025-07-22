@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ialashqa <ialashqa@student.42.fr>          +#+  +:+       +#+         #
+#    By: ismailalashqar <ismailalashqar@student.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/22 12:16:00 by ialashqa          #+#    #+#              #
-#    Updated: 2025/07/22 12:16:40 by ialashqa         ###   ########.fr        #
+#    Updated: 2025/07/22 20:16:32 by ismailalash      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = phonebook
 
-SRCS = phonebook.cpp contact.cpp main.cpp
+SRCS = phonebook.cpp phonebook_validation.cpp contact.cpp main.cpp 
 OBJS = ${SRCS:.cpp=.o}
 
 CC = c++
