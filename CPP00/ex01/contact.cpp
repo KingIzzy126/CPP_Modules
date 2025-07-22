@@ -6,7 +6,7 @@
 /*   By: ialashqa <ialashqa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 12:14:58 by ialashqa          #+#    #+#             */
-/*   Updated: 2025/07/22 13:45:04 by ialashqa         ###   ########.fr       */
+/*   Updated: 2025/07/22 14:28:26 by ialashqa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,27 +37,28 @@ void    Contact::setSecret(std::string str)
     Secret = str;
 }
 
+
 const std::string& Contact::getFirstName() const
 {
-    return FirstName;
+    return (FirstName);
 }
 
 const std::string& Contact::getLastName() const
 {
-    return LastName;
+    return (LastName);
 }
 
 const std::string& Contact::getNickName() const
 {
-    return NickName;
+    return (NickName);
 }
 
 const std::string& Contact::getPhoneNumber() const
 {
-    return PhoneNumber;
+    return (PhoneNumber);
 }
 
 const std::string& Contact::getSecret() const
 {
-    return Secret;
+    return (Secret);
 }
