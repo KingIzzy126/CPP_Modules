@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ismailalashqar <ismailalashqar@student.    +#+  +:+       +#+        */
+/*   By: ialashqa <ialashqa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 12:37:14 by ialashqa          #+#    #+#             */
-/*   Updated: 2025/08/03 18:29:23 by ismailalash      ###   ########.fr       */
+/*   Updated: 2025/08/04 12:47:15 by ialashqa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,13 @@ int main(int ac, char **av)
     std::string     s1;
     std::string     s2;
 
-    if (ac != 4 || av[1][0] == '\0' || av[2][0] == '\0' || av[3][0] == '\0')
-    {
-        std::cout << "Invalid arguments: Program only takes 3 arguments\n";
-        return (-1);
+    if (ac != 4)
+    { 
+        if (av[1][0] == '\0' || av[2][0] == '\0' || av[3][0] == '\0')
+        {
+            std::cout << "Invalid arguments: Program only takes 3 arguments\n";
+            return (-1);
+        }
     }
     filename = av[1];
     s1 = av[2];
