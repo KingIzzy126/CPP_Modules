@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ismailalashqar <ismailalashqar@student.    +#+  +:+       +#+        */
+/*   By: ialashqa <ialashqa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/03 18:46:34 by ismailalash       #+#    #+#             */
-/*   Updated: 2025/08/03 20:42:53 by ismailalash      ###   ########.fr       */
+/*   Updated: 2025/08/04 13:17:59 by ialashqa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Harl {
         void warning(void);
         void error(void);
     public:
-        void complain(std::string& level);
+        void complain(const std::string& level);
 };
 
 #endif

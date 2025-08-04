@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   harl.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ismailalashqar <ismailalashqar@student.    +#+  +:+       +#+        */
+/*   By: ialashqa <ialashqa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/03 18:51:28 by ismailalash       #+#    #+#             */
-/*   Updated: 2025/08/04 12:31:06 by ismailalash      ###   ########.fr       */
+/*   Updated: 2025/08/04 13:21:15 by ialashqa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void Harl::debug(void)
     std::cout << "--: DEBUG :--\n";
     std::cout << "I love having extra bacon for my \n"
                 << "7XL-double-cheese-triple-pickle-special- ketchup burger. \n"
-                << "stdI really do!\n";
+                << "I really do!\n \n";
 }
 
 void Harl::info(void)
@@ -25,7 +25,7 @@ void Harl::info(void)
     std::cout << "--: INFO :--\n";
     std::cout << "I cannot believe adding extra bacon costs more money.\n"
                 << "You didn't put enough bacon in my burger! If you did,\n" 
-                << "I wouldn't be asking for more!\n";
+                << "I wouldn't be asking for more!\n\n";
 }
 
 void Harl::warning(void)
@@ -33,16 +33,16 @@ void Harl::warning(void)
     std::cout << "--: WARNING :--\n";
     std::cout << "I think I deserve to have some extra bacon for free.\n"
                 << "I've been coming for years, whereas you started working\n"
-                << "here just last month.\n";
+                << "here just last month.\n\n";
 }
 
 void Harl::error(void)
 {
     std::cout << "--: ERROR :--\n";
-    std::cout << "This is unacceptable! I want to speak to the manager now.\n";
+    std::cout << "This is unacceptable! I want to speak to the manager now.\n\n";
 }
 
-void Harl::complain(std::string &level)
+void Harl::complain(const std::string &level)
 {
     void (Harl::*functions[])() = {
         &Harl::debug,
@@ -50,7 +50,7 @@ void Harl::complain(std::string &level)
         &Harl::warning,
         &Harl::error
     };
-    std::string instructions[] = {"DEBUG", "ERROR", "INFO", "WARNING"};
+    std::string instructions[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
     int i = 0;
     while(i < 4)
     {
