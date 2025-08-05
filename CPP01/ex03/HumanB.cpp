@@ -6,7 +6,7 @@
 /*   By: ialashqa <ialashqa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/27 19:25:04 by ialashqa          #+#    #+#             */
-/*   Updated: 2025/07/28 20:00:55 by ialashqa         ###   ########.fr       */
+/*   Updated: 2025/08/05 15:57:47 by ialashqa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,8 @@ void HumanB::attack() {
         std::cout << "HumanB " << this->name << " has no weapon" 
                     << ".\n";
     }
+}
+
+HumanB::~HumanB() {
+    std::cout << "HumanB " << this->name << " destroyed.\n";
 }

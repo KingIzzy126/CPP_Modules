@@ -6,7 +6,7 @@
 /*   By: ialashqa <ialashqa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 12:37:14 by ialashqa          #+#    #+#             */
-/*   Updated: 2025/08/04 12:47:15 by ialashqa         ###   ########.fr       */
+/*   Updated: 2025/08/05 15:57:10 by ialashqa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,32 @@ static int open_fstreams(std::fstream& oldfile, std::fstream& newfile, const std
 
 static void replace(std::string& line, const std::string& s1, const std::string& s2)
 {
-    size_t begin = line.find(s1);
-
-    while (begin != std::string::npos)
+    if (s1.empty()) 
+        return;
+    
+    std::string result;
+    int i = 0;
+    int j = 0;
+    
+    while (i < (int)line.size())
     {
-        line.replace(begin, s1.length(), s2);
-        begin = line.find(s1, begin + s2.length());
+        j = line.find(s1, i);
+        if (j != -1 && j == i)
+        {
+            result += s2;
+            i += s1.size() - 1; 
+        }
+        else
+        {
+            result += line[i];
+        }
+        i++;
     }
+    
+    line = result;
 }
+
+
 int main(int ac, char **av)
 {
     std::fstream    oldfile;

@@ -6,7 +6,7 @@
 /*   By: ialashqa <ialashqa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/27 20:53:03 by ialashqa          #+#    #+#             */
-/*   Updated: 2025/07/28 19:37:25 by ialashqa         ###   ########.fr       */
+/*   Updated: 2025/08/05 15:58:01 by ialashqa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ class HumanB {
     HumanB(std::string name);
     void setWeapon(Weapon& weapon);
     void attack();
+    ~HumanB();
 };
 
 #endif
