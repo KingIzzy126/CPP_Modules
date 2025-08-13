@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ialashqa <ialashqa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ismailalashqar <ismailalashqar@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 15:14:04 by ialashqa          #+#    #+#             */
-/*   Updated: 2025/08/12 15:14:07 by ialashqa         ###   ########.fr       */
+/*   Updated: 2025/08/13 18:12:40 by ismailalash      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

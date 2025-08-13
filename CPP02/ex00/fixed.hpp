@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ialashqa <ialashqa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ismailalashqar <ismailalashqar@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 15:12:44 by ialashqa          #+#    #+#             */
-/*   Updated: 2025/08/12 18:13:06 by ialashqa         ###   ########.fr       */
+/*   Updated: 2025/08/13 17:41:22 by ismailalash      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 class Fixed {
     private:
-        int                 integer;
+        int                 fp; // Fixed-point value as an integer
         static const int    bits = 8;
     public:
         Fixed();
