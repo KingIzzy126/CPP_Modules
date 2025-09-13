@@ -6,7 +6,7 @@
 /*   By: ismailalashqar <ismailalashqar@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/13 15:37:27 by ismailalash       #+#    #+#             */
-/*   Updated: 2025/09/13 19:54:50 by ismailalash      ###   ########.fr       */
+/*   Updated: 2025/09/13 20:50:29 by ismailalash      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,9 @@ int main() {
     std::cout << "\n=== BATTLE TIME! ===\n";
     robocop.setAttackDamage(3);
     robocop.attack("Terminator");
-    terminator.takeDamage(robocop.getAttackDamage());
+    if (robocop.getHitPoints() > 0) { 
+        terminator.takeDamage(robocop.getAttackDamage());
+    }
     terminator.beRepaired(2);
 
     std::cout << "\n=== FINAL STATS ===\n";
