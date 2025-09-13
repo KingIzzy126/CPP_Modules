@@ -6,11 +6,11 @@
 #    By: ismailalashqar <ismailalashqar@student.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/20 14:18:02 by ialashqa          #+#    #+#              #
-#    Updated: 2025/09/13 15:39:50 by ismailalash      ###   ########.fr        #
+#    Updated: 2025/09/13 19:59:30 by ismailalash      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = fixed
+NAME = ScavTrap
 
 SRCS = main.cpp ClapTrap.cpp
 OBJS = ${SRCS:.cpp=.o}

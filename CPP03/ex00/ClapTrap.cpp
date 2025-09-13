@@ -6,7 +6,7 @@
 /*   By: ismailalashqar <ismailalashqar@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 14:28:48 by ialashqa          #+#    #+#             */
-/*   Updated: 2025/09/13 18:21:45 by ismailalash      ###   ########.fr       */
+/*   Updated: 2025/09/13 20:19:34 by ismailalash      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &copy)
 
 ClapTrap::~ClapTrap() 
 {
-    std::cout << "ClapTrap " << _name << " destructor called\n";
+    std::cout << "ClapTrap " << _name << " was destroyed\n";
 }
 
 /* ---------------------------------------------- */
@@ -84,7 +84,9 @@ void ClapTrap::attack(const std::string &target)
 void ClapTrap::takeDamage(unsigned int amount) 
 {
     std::cout << _name << " took " << amount << " of damage!\n";
-    hitPoints -= amount;
+    hitPoints -= (int)amount;
+    if (hitPoints < 0)
+        hitPoints = 0; 
 }
 
 void ClapTrap::beRepaired(unsigned int amount) 

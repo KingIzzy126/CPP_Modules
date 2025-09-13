@@ -6,7 +6,7 @@
 /*   By: ismailalashqar <ismailalashqar@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/13 15:37:27 by ismailalash       #+#    #+#             */
-/*   Updated: 2025/09/13 18:26:00 by ismailalash      ###   ########.fr       */
+/*   Updated: 2025/09/13 19:54:50 by ismailalash      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,7 @@ int main() {
     std::cout << "| Attack Damage: " << robocop_copy.getAttackDamage() << "               |\n";
     std::cout << "✧──────────────────────────────✧\n";
 
+    std::cout << "\n=== DESTRUCTION ORDER ===\n";
+    
     return (0);
 }
