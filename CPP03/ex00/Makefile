@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ialashqa <ialashqa@student.42.fr>          +#+  +:+       +#+         #
+#    By: ismailalashqar <ismailalashqar@student.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/20 14:18:02 by ialashqa          #+#    #+#              #
-#    Updated: 2025/08/20 14:18:04 by ialashqa         ###   ########.fr        #
+#    Updated: 2025/09/13 15:39:50 by ismailalash      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = fixed
 
-SRCS = main.cpp fixed.cpp
+SRCS = main.cpp ClapTrap.cpp
 OBJS = ${SRCS:.cpp=.o}
 
 CC = c++
