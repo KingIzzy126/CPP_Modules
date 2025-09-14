@@ -6,13 +6,13 @@
 #    By: ismailalashqar <ismailalashqar@student.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/20 14:18:02 by ialashqa          #+#    #+#              #
-#    Updated: 2025/09/13 20:08:47 by ismailalash      ###   ########.fr        #
+#    Updated: 2025/09/13 23:12:38 by ismailalash      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ScavTrap
+NAME = FragTrap
 
-SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp
+SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
 OBJS = ${SRCS:.cpp=.o}
 
 CC = c++
