@@ -12,18 +12,23 @@
 
 #include "WrongAnimal.hpp"
 
+/* ---------------------------------------------- */
+/*          Constructors & operators              */
+/* ---------------------------------------------- */
+
 WrongAnimal::WrongAnimal() : _type("WrongAnimal")
 {
-    std::cout << "WrongAnimal default constructor called\n";
+    std::cout << "WrongAnimal -" << _type << "- default constructor called\n";
 }
+
 WrongAnimal::WrongAnimal(const std::string &type) : _type(type)
 {
-    std::cout << "WrongAnimal named constructor called\n";
+    std::cout << "WrongAnimal -" << _type << "- named constructor called\n";
 }
 
 WrongAnimal::WrongAnimal(const WrongAnimal &copy) : _type(copy._type)
 {
-    std::cout << "WrongAnimal copy constructor called\n";
+    std::cout << "WrongAnimal -" << _type << "- copy constructor called\n";
 }
 
 WrongAnimal &WrongAnimal::operator=(const WrongAnimal &copy)
@@ -38,12 +43,21 @@ WrongAnimal &WrongAnimal::operator=(const WrongAnimal &copy)
 
 WrongAnimal::~WrongAnimal()
 {
-    std::cout << "WrongAnimal destructor called\n";
+    std::cout << "WrongAnimal -" << _type << "- destructor called\n";
 }
 
 void WrongAnimal::makeSound() const
 {
-    std::cout << "WrongAnimal sound\n";
+    std::cout << "WrongAnimal -" << _type << "- made a sound\n";
+}
+
+/* ---------------------------------------------- */
+/*             Setters and Getters                */
+/* ---------------------------------------------- */
+
+void WrongAnimal::setType(const std::string &type)
+{
+    _type = type;
 }
 
 std::string WrongAnimal::getType() const

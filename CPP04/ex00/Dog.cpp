@@ -12,6 +12,10 @@
 
 #include "Dog.hpp"
 
+/* ---------------------------------------------- */
+/*          Constructors & operators              */
+/* ---------------------------------------------- */
+
 Dog::Dog() : Animal("Dog")
 {
     std::cout << "Dog default constructor called\n";

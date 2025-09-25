@@ -28,6 +28,8 @@ class WrongAnimal
         virtual ~WrongAnimal();
 
         void makeSound() const;
+
+        void setType(const std::string &type);
         std::string getType() const;
 };
 

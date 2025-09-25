@@ -12,6 +12,10 @@
 
 #include "Cat.hpp"
 
+/* ---------------------------------------------- */
+/*          Constructors & operators              */
+/* ---------------------------------------------- */
+
 Cat::Cat() : Animal("Cat")
 {
     std::cout << "Cat default constructor called\n";
