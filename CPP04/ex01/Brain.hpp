@@ -13,7 +13,8 @@
 #ifndef BRAIN_HPP
 # define BRAIN_HPP
 
-#include <iostream>
+# include <iostream>
+# include <string>
 
 class Brain
 {
@@ -27,7 +28,8 @@ class Brain
         ~Brain();
 
         void addIdea(const std::string &idea);
-        void printIdeas() const;
+        const std::string printIdeas(int const index) const;
+        const std::string *getIdeaAddress(int const &index) const;
 };
 
 #endif

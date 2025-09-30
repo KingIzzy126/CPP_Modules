@@ -14,9 +14,12 @@
 # define DOG_HPP
 
 # include "Animal.hpp"
+# include "Brain.hpp"
 
 class Dog : public Animal
 {
+    private:
+        Brain* brain;  // Pointer to Brain object
     public:
         Dog();
         Dog(std::string type);
@@ -25,6 +28,8 @@ class Dog : public Animal
         Dog &operator=(const Dog &copy);
 
         virtual void makeSound() const;
+        void getIdea(int i) const;
+        void setIdea(int i, const std::string &idea);
 };
 
 #endif
