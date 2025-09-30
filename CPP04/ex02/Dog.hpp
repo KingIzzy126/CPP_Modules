@@ -1,0 +1,35 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ialashqa <ialashqa@student.42abudhabi.a    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/09/19 16:49:58 by ialashqa          #+#    #+#             */
+/*   Updated: 2025/09/19 16:49:58 by ialashqa         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef DOG_HPP
+# define DOG_HPP
+
+# include "Animal.hpp"
+# include "Brain.hpp"
+
+class Dog : public Animal
+{
+    private:
+        Brain* brain;  // Pointer to Brain object
+    public:
+        Dog();
+        Dog(std::string type);
+        Dog(const Dog &copy);
+        virtual ~Dog();
+        Dog &operator=(const Dog &copy);
+
+        virtual void makeSound() const;
+        void getIdea(int i) const;
+        void setIdea(int i, const std::string &idea);
+};
+
+#endif

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ialashqa <ialashqa@student.42.fr>          +#+  +:+       +#+         #
+#    By: ialashqa <ialashqa@student.42abudhabi.a    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/23 14:20:04 by ialashqa          #+#    #+#              #
-#    Updated: 2025/07/23 14:23:08 by ialashqa         ###   ########.fr        #
+#    Updated: 2025/09/30 18:07:45 by ialashqa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 all: $(NAME)
 
-%.O: %.cpp
+%.o: %.cpp
 	$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJS)

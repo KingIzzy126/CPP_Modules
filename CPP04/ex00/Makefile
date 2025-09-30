@@ -20,7 +20,7 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 all: $(NAME)
 
-%.O: %.cpp
+%..o: %.cpp
 	$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJS)
