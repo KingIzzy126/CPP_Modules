@@ -73,20 +73,20 @@ void Cat::makeSound() const
     std::cout << "Meow meow >:)\n";
 }
 
-void Cat::getIdea(int i) const
+void Cat::getIdea(int index) const
 {
-    if (i >= 0 && i < 100)  // Use the parameter directly
+    if (index >= 0 && index < 100)  // Use the parameter directly
     {
-        std::cout << "Cat idea " << i << ": " << this->brain->printIdeas(i) 
-                  << " at address " << this->brain->getIdeaAddress(i) << "\n";
+        std::cout << "Cat idea " << index << ": " << this->brain->printIdeas(index) 
+                  << " at address " << this->brain->getIdeaAddress(index) << "\n";
     }
     else
     {
-        std::cout << "Invalid idea index: " << i << "\n";
+        std::cout << "Invalid idea index: " << index << "\n";
     }
 }
 
-void Cat::setIdea(int i, const std::string &idea)
+void Cat::setIdea(int index, const std::string &idea)
 {
     brain->addIdea(idea);
 }

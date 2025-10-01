@@ -28,8 +28,8 @@ class Cat : public Animal
         Cat &operator=(const Cat &copy);
 
         virtual void makeSound() const;
-        void getIdea(int i) const;
-        void setIdea(int i, const std::string &idea);
+        void getIdea(int index) const;
+        void setIdea(int index, const std::string &idea);
 };
 
 #endif
