@@ -14,11 +14,13 @@
 #include "A.hpp"
 #include "B.hpp"
 #include "C.hpp"
+#include <cstdlib>
+#include <ctime> 
 #include <iostream>
 
 int main(void)
 {
-	std::srand(std::time(NULL));
+	srand(time(NULL));
     Base *a = new A();
     Base *b = new B();
     Base *c = new C();
