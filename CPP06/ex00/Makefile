@@ -12,7 +12,7 @@
 
 NAME = Convert
 
-SRCS = Main.cpp DetectType.cpp ScalarConvert.cpp 
+SRCS = Main.cpp DetectType.cpp ScalarConverter.cpp 
 OBJS = ${SRCS:.cpp=.o}
 
 CC = c++

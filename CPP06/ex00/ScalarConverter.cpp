@@ -16,23 +16,23 @@
 /*       Orthodox Canonical Form (private)        */
 /* ---------------------------------------------- */
 
-ScalarConvert::ScalarConvert() 
+ScalarConverter::ScalarConverter() 
 {
 
 }
 
-ScalarConvert::ScalarConvert(const ScalarConvert& other) 
+ScalarConverter::ScalarConverter(const ScalarConverter& other) 
 { 
     (void)other; 
 }
 
-ScalarConvert& ScalarConvert::operator=(const ScalarConvert& other) 
+ScalarConverter& ScalarConverter::operator=(const ScalarConverter& other) 
 { 
     (void)other; 
     return *this; 
 }
 
-ScalarConvert::~ScalarConvert() 
+ScalarConverter::~ScalarConverter() 
 {
 
 }
@@ -108,7 +108,7 @@ static void handlePseudo(const std::string &str)
     printDouble(value, false);
 }
 
-void ScalarConvert::convert(const std::string &literal)
+void ScalarConverter::convert(const std::string &literal)
 {
     if (isPseudoLiteral(literal))
     {

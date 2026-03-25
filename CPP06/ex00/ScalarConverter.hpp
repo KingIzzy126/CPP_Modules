@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCALARCONVERT_HPP
-#define SCALARCONVERT_HPP
+#ifndef SCALARCONVERTER_HPP
+#define SCALARCONVERTER_HPP
 
 #include <iostream>
 #include <string>
@@ -20,13 +20,13 @@
 #include <cstdlib>
 #include <limits>
 
-class ScalarConvert 
+class ScalarConverter 
 {
     private:
-        ScalarConvert();
-        ScalarConvert(const ScalarConvert& other);
-        ScalarConvert& operator=(const ScalarConvert& other);
-        ~ScalarConvert();
+        ScalarConverter();
+        ScalarConverter(const ScalarConverter& other);
+        ScalarConverter& operator=(const ScalarConverter& other);
+        ~ScalarConverter();
     public:
         static void convert(const std::string& input);
 };
