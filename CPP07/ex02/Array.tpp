@@ -6,9 +6,11 @@
 /*   By: ismailalashqar <ismailalashqar@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/05 19:31:20 by ismailalash       #+#    #+#             */
-/*   Updated: 2026/04/08 14:59:51 by ismailalash      ###   ########.fr       */
+/*   Updated: 2026/04/09 16:08:40 by ismailalash      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "Array.hpp"
 
 /* ---------------------------------------------- */
 /*          Constructors & Destructor             */
@@ -100,10 +102,4 @@ template<typename T>
 unsigned int Array<T>::size() const
 {
     return _size;
-}
-
-template<typename T>
-const char* Array<T>::OutOfBoundsException::what(void) const throw()
-{
-    return ("Error: Index out of bounds");
 }

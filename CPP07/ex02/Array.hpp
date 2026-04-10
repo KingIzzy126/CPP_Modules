@@ -6,7 +6,7 @@
 /*   By: ismailalashqar <ismailalashqar@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/05 19:18:44 by ismailalash       #+#    #+#             */
-/*   Updated: 2026/04/08 14:58:20 by ismailalash      ###   ########.fr       */
+/*   Updated: 2026/04/09 16:09:14 by ismailalash      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,15 +36,17 @@ class Array
         // Subscript operator
         T& operator[](unsigned int index);
         const T& operator[](unsigned int index) const;
-
-        // Function
+        
         unsigned int size() const;
 
         // Custom Exception
         class OutOfBoundsException : public std::exception
         {
         public:
-            virtual const char* what(void) const throw();
+            virtual const char* what(void) const throw()
+            {
+                return ("Error: Index out of bounds");
+            }
         };
 };
 
