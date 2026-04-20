@@ -6,7 +6,7 @@
 /*   By: ialashqa <ialashqa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 16:43:42 by ialashqa          #+#    #+#             */
-/*   Updated: 2026/04/20 17:10:25 by ialashqa         ###   ########.fr       */
+/*   Updated: 2026/04/20 18:57:40 by ialashqa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,21 @@ Span::Span(unsigned int n) : _n(n)
 {
 }
 
-Span::Span(const Span &copy) : _n(copy._n), _numbers(copy._numbers)
+Span::Span(const Span &copy)
+{
+    *this = copy;
+}
+
+Span &Span::operator= (const Span &other)
+{
+    if (this != &other) {
+        _n = other._n;
+        _numbers = other._numbers;`
+    }
+    return *this;
+}
+
+Span::~Span() 
 {
 }
+
