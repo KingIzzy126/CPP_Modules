@@ -6,7 +6,7 @@
 /*   By: ialashqa <ialashqa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 16:43:45 by ialashqa          #+#    #+#             */
-/*   Updated: 2026/04/20 17:06:37 by ialashqa         ###   ########.fr       */
+/*   Updated: 2026/04/21 16:49:35 by ialashqa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,17 +25,24 @@ class Span
         std::vector<int> _numbers;
 
     public:
-        span();
-        span(unsigned int n);
-        span(const span &copy);
-        span &operator=(const span &copy);
-        ~span();
+        Span();
+        Span(unsigned int n);
+        Span(const Span &copy);
+        Span &operator=(const Span &copy);
+        ~Span();
 
         // Member functions
-        void addNumber(int number);
+        void addNumber(int num);
         int shortestSpan();
         int longestSpan();
-        void addNumbers(std::vector<int>::iterator begin, std::vector<int>::iterator end);
+        
+        template <typename Iterator>
+        void addNumber(Iterator begin, Iterator end)
+        {
+            if (_numbers.size() + std::distance(begin, end) > _n)
+                throw FullContainer();
+            _numbers.insert(_numbers.end(), begin, end);
+        }
         
         class FullContainer : public std::exception {
             public:
