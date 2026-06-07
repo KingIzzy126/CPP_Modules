@@ -6,11 +6,11 @@
 /*   By: ialashqa <ialashqa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/02 17:21:56 by ialashqa          #+#    #+#             */
-/*   Updated: 2026/06/04 18:22:47 by ialashqa         ###   ########.fr       */
+/*   Updated: 2026/06/07 16:31:44 by ialashqa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BITCOINEXCHAGE_HPP
+#ifndef BITCOINEXCHANGE_HPP
 # define BITCOINEXCHANGE_HPP
 
 # include <iostream>

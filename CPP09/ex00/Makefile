@@ -6,13 +6,13 @@
 #    By: ialashqa <ialashqa@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/04/02 16:25:47 by ismailalash       #+#    #+#              #
-#    Updated: 2026/06/04 14:39:36 by ialashqa         ###   ########.fr        #
+#    Updated: 2026/06/07 20:32:48 by ialashqa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Run
+NAME = btc
 
-SRCS = Main.cpp BitcoinExchange.cpp
+SRCS = main.cpp BitcoinExchange.cpp
 OBJS = ${SRCS:.cpp=.o}
 
 CC = c++
