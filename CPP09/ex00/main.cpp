@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Main.cpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ialashqa <ialashqa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/07 16:30:14 by ialashqa          #+#    #+#             */
-/*   Updated: 2026/06/07 16:30:25 by ialashqa         ###   ########.fr       */
+/*   Updated: 2026/06/12 15:52:00 by ialashqa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,16 @@ int	main(int argc, char** argv)
 	}
 
 	BitcoinExchange	btc;
-	btc.readDatabase();
-	btc.readInput(argv[1]);
+
+	try
+	{
+		btc.readDatabase();
+		btc.readInput(argv[1]);
+	}
+	catch (const std::runtime_error& e)
+	{
+		std::cerr << e.what() << "\n";
+	}
 
 	return 0;
 }

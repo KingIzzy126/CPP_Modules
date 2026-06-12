@@ -6,7 +6,7 @@
 /*   By: ialashqa <ialashqa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/02 17:21:56 by ialashqa          #+#    #+#             */
-/*   Updated: 2026/06/07 16:31:44 by ialashqa         ###   ########.fr       */
+/*   Updated: 2026/06/12 19:51:50 by ialashqa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include <sstream>
 # include <cctype>
 # include <map>
+# include <stdexcept>
 
 class BitcoinExchange
 {

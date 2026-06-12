@@ -6,7 +6,7 @@
 /*   By: ialashqa <ialashqa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/02 17:21:53 by ialashqa          #+#    #+#             */
-/*   Updated: 2026/06/08 13:00:36 by ialashqa         ###   ########.fr       */
+/*   Updated: 2026/06/12 21:03:00 by ialashqa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,19 +41,20 @@ void BitcoinExchange::readDatabase()
     std::ifstream   file("data.csv");
     if (!file.is_open())
     {
-        std::cerr << "Error: could not open database.\n";
-        return;
+        throw std::runtime_error("Error: could not open database");
     }
     std::string line;
     std::getline(file, line);
-    
+    // Loop the whole database
     while (std::getline(file, line))
     {
         if (line.empty())
             continue;
+        // Find comma and skip when no comma
         size_t comma = line.find(',');
         if (comma == std::string::npos)
             continue;
+        // (index, comma) 
         std::string date    = line.substr(0, comma);
         std::string rateStr = line.substr(comma + 1);
         float       rate    = static_cast<float>(std::strtod(rateStr.c_str(), NULL));
@@ -136,24 +137,32 @@ void BitcoinExchange::readInput(std::string file)
     std::ifstream input(file.c_str());
     if (!input.is_open())
     {
-        std::cerr << "Error: could not open file.\n";
-        return;
+        throw std::runtime_error("Error: could not open input file");
     }
     std::string line;
     while (std::getline(input, line))
     {
         if (line.empty())
             continue;
-        if (line == "date | value")
+        if (line == "date | value" || line == "date,value")
             continue;
         size_t split = line.find(" | ");
+        bool   isPipe = (split != std::string::npos);
+        if (!isPipe)
+            split = line.find(",");
         if (split == std::string::npos)
         {
             std::cerr << "Error: bad input => " << line << "\n";
             continue;
         }
         std::string date    = line.substr(0, split);
-        std::string rateStr = line.substr(split + 3);
+        std::string rateStr = line.substr(split + (isPipe ? 3 : 1));
+        if (date.size() < 10)
+        {
+            std::cerr << "Error: bad input => " << line << "\n";
+            continue;
+        }
+        
         float       rate    = static_cast<float>(std::strtod(rateStr.c_str(), NULL));
         int         month   = std::atoi(date.substr(5, 2).c_str());
         int         day     = std::atoi(date.substr(8, 2).c_str());
@@ -165,6 +174,7 @@ void BitcoinExchange::readInput(std::string file)
         }
         if (!isValidValue(rateStr, rate, line))
             continue;
+        // get rate for the database specific date
         float dbRate = getRate(date);
         if (dbRate < 0)
             continue;
