@@ -88,8 +88,10 @@ void    PmergeMe::run()
 
 int PmergeMe::jacobsthal(int n)
 {
-    if (n == 0) return 0;
-    if (n == 1) return 1;
+    if (n == 0) 
+        return 0;
+    if (n == 1) 
+        return 1;
     int prev2 = 0, prev1 = 1, curr = 0;
     for (int i = 2; i <= n; i++)
     {
@@ -100,27 +102,27 @@ int PmergeMe::jacobsthal(int n)
     return curr;
 }
 
-void PmergeMe::binaryInsertVec(std::vector<int>& chain, int value, int bound)
+void PmergeMe::binaryInsertVec(std::vector<int>& mainC, int value, int bound)
 {
     int lo = 0;
     int hi = bound;
     while (lo < hi)
     {
         int mid = (lo + hi) / 2;
-        if (chain[mid] < value)
+        if (mainC[mid] < value)
             lo = mid + 1; // place value to the right
         else
             hi = mid; // place value at mid or to the left
     }
-    chain.insert(chain.begin() + lo, value);
+    mainC.insert(mainC.begin() + lo, value);
 }
 
-void PmergeMe::insertPendingVec(std::vector<int>& chain, std::vector<int>& pending)
+void PmergeMe::insertPendingVec(std::vector<int>& mainC, std::vector<int>& pending)
 {
     int size = static_cast<int>(pending.size());
     if (size == 0)
         return;
-    binaryInsertVec(chain, pending[0], 1);
+    binaryInsertVec(mainC, pending[0], 1);
     int k = 2;
     while (true)
     {
@@ -130,7 +132,7 @@ void PmergeMe::insertPendingVec(std::vector<int>& chain, std::vector<int>& pendi
             break;
         int groupEnd = (jCurr < size) ? jCurr : size;
         for (int i = groupEnd - 1; i >= jPrev; i--)
-            binaryInsertVec(chain, pending[i], static_cast<int>(chain.size()));
+            binaryInsertVec(mainC, pending[i], static_cast<int>(mainC.size()));
         k++;
     }
 }
@@ -143,6 +145,7 @@ void PmergeMe::mergeInsertVec(std::vector<int>& vec)
         return;
     bool    hasStraggler = (n % 2 != 0);
     int     straggler = 0;
+    // if there is straggler, take last element w vec.back
     if (hasStraggler)
         straggler = vec.back();
     int pairCount = n / 2;
@@ -161,9 +164,9 @@ void PmergeMe::mergeInsertVec(std::vector<int>& vec)
     mergeInsertVec(largers);
     std::vector<std::pair<int,int> > sortedPairs;
     std::vector<bool>               used(pairCount, false);
-    for (int i = 0; i < pairCount; i++)
+    for (int i = 0; i < pairCount; i++) // loops through each element in largers
     {
-        for (int j = 0; j < pairCount; j++)
+        for (int j = 0; j < pairCount; j++) // loops through each pair in pairs vector
         {
             if (!used[j] && pairs[j].second == largers[i])
             {
@@ -173,40 +176,40 @@ void PmergeMe::mergeInsertVec(std::vector<int>& vec)
             }
         }
     }
-    std::vector<int> chain;
+    std::vector<int> mainC;
     std::vector<int> pending;
     for (int i = 0; i < pairCount; i++)
     {
-        chain.push_back(sortedPairs[i].second);
+        mainC.push_back(sortedPairs[i].second);
         pending.push_back(sortedPairs[i].first);
     }
-    insertPendingVec(chain, pending);
+    insertPendingVec(mainC, pending);
     if (hasStraggler)
-        binaryInsertVec(chain, straggler, static_cast<int>(chain.size()));
-    vec = chain;
+        binaryInsertVec(mainC, straggler, static_cast<int>(mainC.size()));
+    vec = mainC;
 }
 
-void PmergeMe::binaryInsertDeq(std::deque<int>& chain, int val, int bound)
+void PmergeMe::binaryInsertDeq(std::deque<int>& mainC, int val, int bound)
 {
     int lo = 0;
     int hi = bound;
     while (lo < hi)
     {
         int mid = (lo + hi) / 2;
-        if (chain[mid] < val)
+        if (mainC[mid] < val)
             lo = mid + 1;
         else
             hi = mid;
     }
-    chain.insert(chain.begin() + lo, val);
+    mainC.insert(mainC.begin() + lo, val);
 }
 
-void PmergeMe::insertPendingDeq(std::deque<int>& chain, std::deque<int>& pending)
+void PmergeMe::insertPendingDeq(std::deque<int>& mainC, std::deque<int>& pending)
 {
     int size = static_cast<int>(pending.size());
     if (size == 0)
         return;
-    binaryInsertDeq(chain, pending[0], 1);
+    binaryInsertDeq(mainC, pending[0], 1);
     int k = 2;
     while (true)
     {
@@ -216,7 +219,7 @@ void PmergeMe::insertPendingDeq(std::deque<int>& chain, std::deque<int>& pending
             break;
         int groupEnd = (jCurr < size) ? jCurr : size;
         for (int i = groupEnd - 1; i >= jPrev; i--)
-            binaryInsertDeq(chain, pending[i], static_cast<int>(chain.size()));
+            binaryInsertDeq(mainC, pending[i], static_cast<int>(mainC.size()));
         k++;
     }
 }
@@ -258,15 +261,15 @@ void PmergeMe::mergeInsertDeq(std::deque<int>& deq)
             }
         }
     }
-    std::deque<int> chain;
+    std::deque<int> mainC;
     std::deque<int> pending;
     for (int i = 0; i < pairCount; i++)
     {
-        chain.push_back(sortedPairs[i].second);
+        mainC.push_back(sortedPairs[i].second);
         pending.push_back(sortedPairs[i].first);
     }
-    insertPendingDeq(chain, pending);
+    insertPendingDeq(mainC, pending);
     if (hasStraggler)
-        binaryInsertDeq(chain, straggler, static_cast<int>(chain.size()));
-    deq = chain;
+        binaryInsertDeq(mainC, straggler, static_cast<int>(mainC.size()));
+    deq = mainC;
 }

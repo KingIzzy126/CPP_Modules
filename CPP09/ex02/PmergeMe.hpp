@@ -6,7 +6,7 @@
 /*   By: ialashqa <ialashqa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 16:34:44 by ialashqa          #+#    #+#             */
-/*   Updated: 2026/06/10 14:52:05 by ialashqa         ###   ########.fr       */
+/*   Updated: 2026/06/13 14:32:20 by ialashqa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,13 @@ class PmergeMe
         
         // Ford Johnson vector
         void    mergeInsertVec(std::vector<int>& vec);
-        void    insertPendingVec(std::vector<int>& chain, std::vector<int>& pending);
-        void    binaryInsertVec(std::vector<int>& chain, int value, int bound);
+        void    insertPendingVec(std::vector<int>& mainC, std::vector<int>& pending);
+        void    binaryInsertVec(std::vector<int>& mainC, int value, int bound);
         
         // Ford Johnson deque
         void    mergeInsertDeq(std::deque<int>& deq);
-        void    insertPendingDeq(std::deque<int>& chain, std::deque<int>& pending);
-        void    binaryInsertDeq(std::deque<int>& chain, int value, int bound);
+        void    insertPendingDeq(std::deque<int>& mainC, std::deque<int>& pending);
+        void    binaryInsertDeq(std::deque<int>& mainC, int value, int bound);
 
         // Jacobs sequencer
         int     jacobsthal(int n);

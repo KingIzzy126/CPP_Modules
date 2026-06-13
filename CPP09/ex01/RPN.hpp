@@ -6,7 +6,7 @@
 /*   By: ialashqa <ialashqa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/08 17:07:08 by ialashqa          #+#    #+#             */
-/*   Updated: 2026/06/08 17:12:21 by ialashqa         ###   ########.fr       */
+/*   Updated: 2026/06/13 17:12:49 by ialashqa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,12 @@
 # include <iostream>
 # include <sstream>
 # include <stack>
+# include <list>
 
 class RPN
 {
     private:
-        std::stack<int> _stack;
+        std::stack<int, std::list<int> > _stack;
         
         bool    isOperator(char c);
         int     applyOperator(char op, int a, int b);
